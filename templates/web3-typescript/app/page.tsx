@@ -39,7 +39,7 @@ export default function Home() {
                 borderRadius: '50%',
                 display: 'flex',
                 alignItems: 'center',
-                justifyContent: center,
+                justifyContent: 'center',
                 boxShadow: '0 0 60px rgba(102, 126, 234, 0.4), 0 0 100px rgba(118, 75, 162, 0.3)'
               }}>
                 <svg
@@ -219,7 +219,7 @@ export default function Home() {
       <footer style={{ marginTop: '5rem', textAlign: 'center', color: 'var(--text-secondary)', fontSize: '0.875rem', position: 'relative', zIndex: 1 }}>
         <div className="divider"></div>
         <p style={{ marginBottom: '0.5rem' }}>Built with Next.js 15, RainbowKit, wagmi, and viem</p>
-        <p style={{ fontSize: '0.75rem', opacity: 0.7 }}>© 2024 {{PROJECT_NAME}}. All rights reserved.</p>
+        <p style={{ fontSize: '0.75rem', opacity: 0.7 }}>© 2026 {{PROJECT_NAME}}. All rights reserved.</p>
       </footer>
     </main>
   );
