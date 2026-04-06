@@ -166,8 +166,8 @@ MIT
 
 ## Support
 
-- GitHub Issues: [https://github.com/chainjet/cli/issues](https://github.com/chainjet/cli/issues)
-- Documentation: [https://docs.chainjet.io](https://docs.chainjet.io)
+- GitHub Issues: [https://github.com/chainjet/cli/issues](https://github.com/chainjet/issues)
+- Documentation: [https://www.npmjs.com/package/chainjet-cli](https://www.npmjs.com/package/chainjet-cli)
 
 ---
 
