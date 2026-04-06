@@ -166,8 +166,9 @@ MIT
 
 ## Support
 
-- GitHub Issues: [https://github.com/ramykatour/chainjet/issues](https://github.com/ramykatour/chainjet/issues)
-
+- GitHub Issues: [https://github.com/chainjet/cli/issues](https://github.com/chainjet/cli/issues)
+- Documentation: [https://docs.chainjet.io](https://docs.chainjet.io)
 
 ---
 
+Built with ❤️ by ChainJet
