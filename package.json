@@ -1,6 +1,6 @@
 {
   "name": "chainjet-cli",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "ChainJet CLI - Modern Web3 dApp scaffolding tool with RainbowKit, wagmi, and viem",
   "main": "index.js",
   "bin": {
