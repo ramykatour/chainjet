@@ -98,7 +98,7 @@ All dependencies are pinned to the latest compatible versions:
   "@rainbow-me/rainbowkit": "^2.1.6",
   "wagmi": "^2.13.6",
   "viem": "^2.21.58",
-  "next": "15.1.3"
+  "next": "16.2.2"
 }
 ```
 
@@ -145,7 +145,7 @@ Make sure to:
 To contribute to this CLI tool:
 
 ```bash
-git clone https://github.com/chainjet/cli.git
+git clone https://github.com/ramykatour/chainjet/.git
 cd cli
 npm link
 chainjet create test-app
@@ -167,7 +167,7 @@ MIT
 ## Support
 
 - GitHub Issues: [https://github.com/chainjet/cli/issues](https://github.com/chainjet/issues)
-- Documentation: [https://www.npmjs.com/package/chainjet-cli](https://www.npmjs.com/package/chainjet-cli)
+- DEMO: [https://chainjet-demo.vercel.app/](https://chainjet-demo.vercel.app/)
 
 ---
 
