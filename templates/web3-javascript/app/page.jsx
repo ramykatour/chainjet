@@ -10,26 +10,40 @@ export default function Home() {
   });
 
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center p-8">
+    <main className="min-h-screen flex flex-col items-center justify-center p-8" style={{ position: 'relative', zIndex: 1 }}>
       <div className="max-w-4xl w-full">
         {/* Header */}
-        <header className="flex justify-between items-center mb-12">
+        <header className="flex justify-between items-center mb-12 animate-slide-up">
           <div>
-            <h1 className="text-4xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+            <h1 className="gradient-text" style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 700, letterSpacing: '-0.02em', marginBottom: '0.5rem' }}>
               {{PROJECT_NAME}}
             </h1>
-            <p className="text-gray-400 mt-2">Your Web3 dApp powered by RainbowKit</p>
+            <p style={{ color: 'var(--text-secondary)', marginTop: '0.5rem', fontSize: '1.1rem' }}>
+              Your Web3 dApp powered by RainbowKit
+            </p>
           </div>
-          <ConnectButton />
+          <div className="animate-slide-up" style={{ animationDelay: '0.1s' }}>
+            <ConnectButton />
+          </div>
         </header>
 
         {/* Main Content */}
         {!isConnected ? (
-          <div className="text-center py-20">
+          <div className="text-center py-20 animate-slide-up" style={{ animationDelay: '0.2s' }}>
             <div className="mb-8">
-              <div className="w-32 h-32 mx-auto bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center mb-6">
+              <div className="animate-float" style={{
+                width: '200px',
+                height: '200px',
+                margin: '0 auto 2rem',
+                background: 'var(--primary-gradient)',
+                borderRadius: '50%',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: center,
+                boxShadow: '0 0 60px rgba(102, 126, 234, 0.4), 0 0 100px rgba(118, 75, 162, 0.3)'
+              }}>
                 <svg
-                  className="w-16 h-16 text-white"
+                  style={{ width: '80px', height: '80px', color: 'white' }}
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -37,152 +51,162 @@ export default function Home() {
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    strokeWidth={2}
+                    strokeWidth={1.5}
                     d="M13 10V3L4 14h7v7l9-11h-7z"
                   />
                 </svg>
               </div>
-              <h2 className="text-2xl font-bold mb-4">Connect Your Wallet</h2>
-              <p className="text-gray-400 max-w-md mx-auto">
+              <h2 style={{ fontSize: '2rem', fontWeight: 700, marginBottom: '1rem', color: 'white' }}>
+                Connect Your Wallet
+              </h2>
+              <p style={{ color: 'var(--text-secondary)', maxWidth: '500px', margin: '0 auto', fontSize: '1.1rem', lineHeight: 1.7 }}>
                 Connect your wallet to start interacting with this Web3 application.
               </p>
+              <div style={{ marginTop: '2rem' }}>
+                <div className="badge badge-purple" style={{ marginBottom: '0.5rem', display: 'inline-block' }}>
+                  Multi-Chain Support
+                </div>
+                <div className="badge badge-green">
+                  Secure & Fast
+                </div>
+              </div>
             </div>
           </div>
         ) : (
           <div className="space-y-6">
             {/* Account Info Card */}
-            <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700">
-              <h2 className="text-2xl font-bold mb-6">Account Information</h2>
-              <div className="grid gap-4 md:grid-cols-2">
-                <div>
-                  <p className="text-gray-400 text-sm mb-1">Connected Address</p>
-                  <p className="text-lg font-mono text-purple-400">{address?.slice(0, 6)}...{address?.slice(-4)}</p>
+            <div className="card animate-slide-up" style={{ animationDelay: '0.1s' }}>
+              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1.5rem' }}>
+                <div className="icon-box icon-box-purple">
+                  <svg style={{ width: '24px', height: '24px', color: '#c084fc' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                  </svg>
                 </div>
-                <div>
-                  <p className="text-gray-400 text-sm mb-1">Network</p>
-                  <p className="text-lg font-semibold">{chain?.name || 'Unknown'}</p>
+                <h2 style={{ fontSize: '2rem', fontWeight: 700, color: 'white', margin: 0 }}>
+                  Account Information
+                </h2>
+              </div>
+              <div className="grid-2">
+                <div style={{ marginBottom: '1rem' }}>
+                  <p style={{ color: 'var(--text-secondary)', fontSize: '0.875rem', marginBottom: '0.5rem', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 600 }}>
+                    Connected Address
+                  </p>
+                  <p style={{ fontSize: '1.25rem', fontFamily: 'monospace', color: '#c084fc', fontWeight: 600 }}>
+                    {address?.slice(0, 6)}...{address?.slice(-4)}
+                  </p>
                 </div>
-                <div>
-                  <p className="text-gray-400 text-sm mb-1">Balance</p>
-                  <p className="text-lg font-semibold">
-                    {balance ? `${parseFloat(balance.formatted).toFixed(4)} ${balance.symbol}` : 'Loading...'}
+                <div style={{ marginBottom: '1rem' }}>
+                  <p style={{ color: 'var(--text-secondary)', fontSize: '0.875rem', marginBottom: '0.5rem', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 600 }}>
+                    Network
+                  </p>
+                  <p style={{ fontSize: '1.25rem', fontWeight: 600, color: 'white' }}>
+                    {chain?.name || 'Unknown'}
+                  </p>
+                </div>
+                <div style={{ marginBottom: '1rem' }}>
+                  <p style={{ color: 'var(--text-secondary)', fontSize: '0.875rem', marginBottom: '0.5rem', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 600 }}>
+                    Balance
+                  </p>
+                  <p style={{ fontSize: '1.25rem', fontWeight: 600, color: 'white' }}>
+                    {balance ? `${parseFloat(balance.formatted).toFixed(4)} ${balance.symbol}` : <span className="spinner" style={{ width: '24px', height: '24px', display: 'inline-block', verticalAlign: 'middle', marginLeft: '0.5rem' }}></span>}
                   </p>
                 </div>
               </div>
             </div>
 
             {/* Features Section */}
-            <div className="grid gap-6 md:grid-cols-2">
-              <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700">
-                <div className="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center mb-4">
-                  <svg
-                    className="w-6 h-6 text-purple-400"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
-                    />
+            <div className="grid-2">
+              <div className="card animate-slide-up" style={{ animationDelay: '0.2s' }}>
+                <div className="icon-box icon-box-purple">
+                  <svg style={{ width: '24px', height: '24px', color: '#c084fc' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold mb-2">Secure</h3>
-                <p className="text-gray-400">
+                <h3 style={{ fontSize: '1.5rem', fontWeight: 700, marginBottom: '0.75rem', color: 'white' }}>
+                  Secure
+                </h3>
+                <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7 }}>
                   Built with security best practices and integrated with trusted wallet providers.
                 </p>
               </div>
 
-              <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700">
-                <div className="w-12 h-12 bg-pink-500/20 rounded-lg flex items-center justify-center mb-4">
-                  <svg
-                    className="w-6 h-6 text-pink-400"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M13 10V3L4 14h7v7l9-11h-7z"
-                    />
+              <div className="card animate-slide-up" style={{ animationDelay: '0.3s' }}>
+                <div className="icon-box icon-box-pink">
+                  <svg style={{ width: '24px', height: '24px', color: '#f472b6' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold mb-2">Fast</h3>
-                <p className="text-gray-400">
+                <h3 style={{ fontSize: '1.5rem', fontWeight: 700, marginBottom: '0.75rem', color: 'white' }}>
+                  Fast
+                </h3>
+                <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7 }}>
                   Optimized performance with Next.js 15 and modern React patterns.
                 </p>
               </div>
 
-              <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700">
-                <div className="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center mb-4">
-                  <svg
-                    className="w-6 h-6 text-blue-400"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"
-                    />
+              <div className="card animate-slide-up" style={{ animationDelay: '0.4s' }}>
+                <div className="icon-box icon-box-blue">
+                  <svg style={{ width: '24px', height: '24px', color: '#60a5fa' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold mb-2">Multi-Chain</h3>
-                <p className="text-gray-400">
+                <h3 style={{ fontSize: '1.5rem', fontWeight: 700, marginBottom: '0.75rem', color: 'white' }}>
+                  Multi-Chain
+                </h3>
+                <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7 }}>
                   Support for Ethereum, Polygon, Optimism, Arbitrum, and Base.
                 </p>
               </div>
 
-              <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700">
-                <div className="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center mb-4">
-                  <svg
-                    className="w-6 h-6 text-green-400"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"
-                    />
+              <div className="card animate-slide-up" style={{ animationDelay: '0.5s' }}>
+                <div className="icon-box icon-box-green">
+                  <svg style={{ width: '24px', height: '24px', color: '#4ade80' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold mb-2">Modern UI</h3>
-                <p className="text-gray-400">
+                <h3 style={{ fontSize: '1.5rem', fontWeight: 700, marginBottom: '0.75rem', color: 'white' }}>
+                  Modern UI
+                </h3>
+                <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7 }}>
                   Beautiful interface powered by RainbowKit with custom themes.
                 </p>
               </div>
             </div>
 
             {/* Call to Action */}
-            <div className="bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-2xl p-8 border border-purple-500/20 text-center">
-              <h3 className="text-2xl font-bold mb-4">Start Building</h3>
-              <p className="text-gray-400 mb-6">
+            <div className="card animate-slide-up" style={{
+              animationDelay: '0.6s',
+              background: 'linear-gradient(135deg, rgba(147, 51, 234, 0.15) 0%, rgba(237, 100, 166, 0.15) 100%)',
+              border: '1px solid rgba(147, 51, 234, 0.3)',
+              textAlign: 'center'
+            }}>
+              <h3 style={{ fontSize: '2rem', fontWeight: 700, marginBottom: '1rem', color: 'white' }}>
+                Start Building
+              </h3>
+              <p style={{ color: 'var(--text-secondary)', marginBottom: '2rem', lineHeight: 1.7, fontSize: '1.1rem' }}>
                 This is your starting point. Add smart contracts, integrate DeFi protocols, build NFT galleries, and more!
               </p>
-              <div className="flex gap-4 justify-center flex-wrap">
+              <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
                 <a
                   href="https://docs.rainbowkit.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-6 py-3 bg-purple-500 hover:bg-purple-600 rounded-lg font-semibold transition-colors"
+                  className="btn-primary"
                 >
+                  <svg style={{ width: '20px', height: '20px' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                  </svg>
                   RainbowKit Docs
                 </a>
                 <a
                   href="https://wagmi.sh"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-6 py-3 bg-gray-700 hover:bg-gray-600 rounded-lg font-semibold transition-colors"
+                  className="btn-secondary"
                 >
+                  <svg style={{ width: '20px', height: '20px' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                  </svg>
                   wagmi Docs
                 </a>
               </div>
@@ -192,8 +216,10 @@ export default function Home() {
       </div>
 
       {/* Footer */}
-      <footer className="mt-20 text-center text-gray-500 text-sm">
-        <p>Built with Next.js 15, RainbowKit, wagmi, and viem</p>
+      <footer style={{ marginTop: '5rem', textAlign: 'center', color: 'var(--text-secondary)', fontSize: '0.875rem', position: 'relative', zIndex: 1 }}>
+        <div className="divider"></div>
+        <p style={{ marginBottom: '0.5rem' }}>Built with Next.js 15, RainbowKit, wagmi, and viem</p>
+        <p style={{ fontSize: '0.75rem', opacity: 0.7 }}>© 2024 {{PROJECT_NAME}}. All rights reserved.</p>
       </footer>
     </main>
   );
