@@ -105,7 +105,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
   "@rainbow-me/rainbowkit": "^2.1.6",  // ✅ Latest v2
   "wagmi": "^2.13.6",                  // ✅ Latest v2
   "viem": "^2.21.58",                  // ✅ Latest v2
-  "next": "15.1.3",                    // ✅ Latest v15
+  "next": "16.1.3",                    // ✅ Latest v16
   "@tanstack/react-query": "^5.59.20", // ✅ Latest v5
   "react": "^19.0.0",                  // ✅ Latest v19
   "react-dom": "^19.0.0"               // ✅ Latest v19
@@ -201,7 +201,7 @@ This may take a few minutes...
   cd my-web3-app
   npm run dev
 
-📚 Documentation: https://docs.chainjet.io
+📚 Documentation: https://github.com/ramykatour/chainjet/blob/main/README.md
 ==================================================
 ```
 

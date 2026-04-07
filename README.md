@@ -145,7 +145,7 @@ Make sure to:
 To contribute to this CLI tool:
 
 ```bash
-git clone https://github.com/ramykatour/chainjet/.git
+git clone https://github.com/ramykatour/chainjet.git
 cd cli
 npm link
 chainjet create test-app

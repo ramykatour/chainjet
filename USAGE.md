@@ -279,5 +279,5 @@ export const config = getDefaultConfig({
 ## Support
 
 For issues and questions:
-- GitHub: [https://github.com/chainjet/cli/issues](https://github.com/chainjet/cli/issues)
-- Docs: [https://docs.chainjet.io](https://docs.chainjet.io)
+- GitHub: [https://github.com/ramykatour/chainjeti/issues](https://github.com/ramykatour/chainjeti/issues)
+- Docs: [https://github.com/ramykatour/chainjet/blob/main/README.md](https://github.com/ramykatour/chainjet/blob/main/README.md)

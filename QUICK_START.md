@@ -29,7 +29,7 @@ That's it! You now have a working Web3 dApp. 🎉
 
 ## What You Get
 
-✅ **Modern Stack**: Next.js 15, RainbowKit v2, wagmi v2, viem v2
+✅ **Modern Stack**: Next.js 16, RainbowKit v2, wagmi v2, viem v2
 ✅ **No Errors**: Fixes "getDefaultConfig is not a function"
 ✅ **Multi-Chain**: Ethereum, Polygon, Optimism, Arbitrum, Base
 ✅ **Beautiful UI**: Pre-styled with dark theme
