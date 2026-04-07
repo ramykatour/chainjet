@@ -166,7 +166,7 @@ MIT
 
 ## Support
 
-- GitHub Issues: [https://github.com/chainjet/cli/issues](https://github.com/chainjet/issues)
+- GitHub Issues: [https://github.com/ramykatour/chainjet/issues](https://github.com/ramykatour/chainjet/issues)
 - DEMO: [https://chainjet-demo.vercel.app/](https://chainjet-demo.vercel.app/)
 
 ---
