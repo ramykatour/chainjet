@@ -219,6 +219,7 @@ export default function Home() {
       <footer style={{ marginTop: '5rem', textAlign: 'center', color: 'var(--text-secondary)', fontSize: '0.875rem', position: 'relative', zIndex: 1 }}>
         <div className="divider"></div>
         <p style={{ marginBottom: '0.5rem' }}>Built with Next.js 15, RainbowKit, wagmi, and viem</p>
+		<p style={{ fontSize: '0.75rem', opacity: 0.7 }}>Built with ChainJet ⚡ <code style={{ fontSize: '0.75rem' }}>npx chainjet create app</code></p>
         <p style={{ fontSize: '0.75rem', opacity: 0.7 }}>© 2026 {{PROJECT_NAME}}. All rights reserved.</p>
       </footer>
     </main>
