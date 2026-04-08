@@ -1,6 +1,10 @@
 # ChainJet CLI
 
+![ChainJet CLI Screenshot](https://raw.githubusercontent.com/ramykatour/chainjet/main/img/screen.gif)
+
 🚀 A modern CLI tool for creating Web3 dApps with the latest stack: Next.js 15, RainbowKit v2, wagmi v2, and viem v2.
+
+![ChainJet CLI Screenshot](https://raw.githubusercontent.com/ramykatour/chainjet/main/img/screen.png)
 
 ## Features
 
