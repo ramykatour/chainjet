@@ -6,6 +6,8 @@
 
 ![ChainJet CLI Screenshot](https://raw.githubusercontent.com/ramykatour/chainjet/main/img/screen.png)
 
+- DEMO: [https://chainjet.online/](https://chainjet.online/)
+
 ## Features
 
 - ✨ **Modern Stack**: Built with the latest versions of RainbowKit, wagmi, and viem
@@ -171,7 +173,8 @@ MIT
 ## Support
 
 - GitHub Issues: [https://github.com/ramykatour/chainjet/issues](https://github.com/ramykatour/chainjet/issues)
-- DEMO: [https://chainjet-demo.vercel.app/](https://chainjet-demo.vercel.app/)
+- DOCS: [https://docs.chainjet.online/](https://docs.chainjet.online/)
+- DEMO: [https://demo.chainjet.online/](https://demo.chainjet.online/)
 
 ---
 
